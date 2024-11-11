@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProyectoIntegradorInmogestionPlus" Class="CdInmogestionPlusDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=207.246.73.98;Initial Catalog=ProyectoIntegradorInmogestionPlus;Persist Security Info=True;User ID=Angel;Encrypt=False" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ProyectoIntegradorInmogestionPlusConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_antiguedad" Member="tbl_antiguedad">
+    <Type Name="tbl_antiguedad">
+      <Column Name="ant_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ant_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ant_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tbl_antiguedad_tbl_propiedad" Member="tbl_propiedad" ThisKey="ant_id" OtherKey="ant_id" Type="tbl_propiedad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_video" Member="tbl_video">
+    <Type Name="tbl_video">
+      <Column Name="vid_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vid_url" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="vid_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pro_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_propiedad_tbl_video" Member="tbl_propiedad" ThisKey="pro_id" OtherKey="pro_id" Type="tbl_propiedad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_caracteristicas" Member="tbl_caracteristicas">
+    <Type Name="tbl_caracteristicas">
+      <Column Name="car_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="car_habitaciones" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="car_banos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="car_estacionamineto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="car_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tbl_caracteristicas_tbl_propiedad" Member="tbl_propiedad" ThisKey="car_id" OtherKey="car_id" Type="tbl_propiedad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_cita" Member="tbl_cita">
+    <Type Name="tbl_cita">
+      <Column Name="cit_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cit_comentario_agente" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="cit_descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="cit_fecha_cita" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="cit_hora_cita" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="cit_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_propiedad_tbl_cita" Member="tbl_propiedad" ThisKey="pro_id" OtherKey="pro_id" Type="tbl_propiedad" IsForeignKey="true" />
+      <Association Name="tbl_usuario_tbl_cita" Member="tbl_usuario" ThisKey="usu_id" OtherKey="usu_id" Type="tbl_usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_imagen" Member="tbl_imagen">
+    <Type Name="tbl_imagen">
+      <Column Name="img_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="img_url" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="img_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pro_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_propiedad_tbl_imagen" Member="tbl_propiedad" ThisKey="pro_id" OtherKey="pro_id" Type="tbl_propiedad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_inmobiliaria" Member="tbl_inmobiliaria">
+    <Type Name="tbl_inmobiliaria">
+      <Column Name="inm_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inm_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inm_direccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inm_ruc" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="inm_razon_social" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="inm_telefono" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="inm_correo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inm_imagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inm_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tbl_inmobiliaria_tbl_usuario" Member="tbl_usuario" ThisKey="inm_id" OtherKey="inm_id" Type="tbl_usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_perfil" Member="tbl_perfil">
+    <Type Name="tbl_perfil">
+      <Column Name="perf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="perf_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="perf_descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="perf_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tbl_perfil_tbl_usuario" Member="tbl_usuario" ThisKey="perf_id" OtherKey="perf_id" Type="tbl_usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_plano" Member="tbl_plano">
+    <Type Name="tbl_plano">
+      <Column Name="pla_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pla_url" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pla_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pro_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_propiedad_tbl_plano" Member="tbl_propiedad" ThisKey="pro_id" OtherKey="pro_id" Type="tbl_propiedad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_propiedad" Member="tbl_propiedad">
+    <Type Name="tbl_propiedad">
+      <Column Name="pro_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pro_titulo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pro_precio" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pro_area_total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_are_construida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_alicuota" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pro_descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="pro_fecha_registro" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="pro_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pro_coordenadas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="car_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tope_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tinm_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ant_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inm_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_comp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ubi_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_propiedad_tbl_video" Member="tbl_video" ThisKey="pro_id" OtherKey="pro_id" Type="tbl_video" />
+      <Association Name="tbl_propiedad_tbl_cita" Member="tbl_cita" ThisKey="pro_id" OtherKey="pro_id" Type="tbl_cita" />
+      <Association Name="tbl_propiedad_tbl_imagen" Member="tbl_imagen" ThisKey="pro_id" OtherKey="pro_id" Type="tbl_imagen" />
+      <Association Name="tbl_propiedad_tbl_plano" Member="tbl_plano" ThisKey="pro_id" OtherKey="pro_id" Type="tbl_plano" />
+      <Association Name="tbl_antiguedad_tbl_propiedad" Member="tbl_antiguedad" ThisKey="ant_id" OtherKey="ant_id" Type="tbl_antiguedad" IsForeignKey="true" />
+      <Association Name="tbl_caracteristicas_tbl_propiedad" Member="tbl_caracteristicas" ThisKey="car_id" OtherKey="car_id" Type="tbl_caracteristicas" IsForeignKey="true" />
+      <Association Name="tbl_tipo_inmueble_tbl_propiedad" Member="tbl_tipo_inmueble" ThisKey="tinm_id" OtherKey="tinm_id" Type="tbl_tipo_inmueble" IsForeignKey="true" />
+      <Association Name="tbl_tipo_operacion_tbl_propiedad" Member="tbl_tipo_operacion" ThisKey="tope_id" OtherKey="tope_id" Type="tbl_tipo_operacion" IsForeignKey="true" />
+      <Association Name="tbl_ubicacion_tbl_propiedad" Member="tbl_ubicacion" ThisKey="ubi_id" OtherKey="ubi_id" Type="tbl_ubicacion" IsForeignKey="true" />
+      <Association Name="tbl_usuario_tbl_propiedad" Member="tbl_usuario" ThisKey="inm_id" OtherKey="usu_id" Type="tbl_usuario" IsForeignKey="true" />
+      <Association Name="tbl_usuario_tbl_propiedad1" Member="tbl_usuario1" ThisKey="usu_comp_id" OtherKey="usu_id" Type="tbl_usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_tipo_inmueble" Member="tbl_tipo_inmueble">
+    <Type Name="tbl_tipo_inmueble">
+      <Column Name="tinm_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tinm_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tinm_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tbl_tipo_inmueble_tbl_propiedad" Member="tbl_propiedad" ThisKey="tinm_id" OtherKey="tinm_id" Type="tbl_propiedad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_tipo_operacion" Member="tbl_tipo_operacion">
+    <Type Name="tbl_tipo_operacion">
+      <Column Name="tope_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tope_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tope_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tbl_tipo_operacion_tbl_propiedad" Member="tbl_propiedad" ThisKey="tope_id" OtherKey="tope_id" Type="tbl_propiedad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ubicacion" Member="tbl_ubicacion">
+    <Type Name="tbl_ubicacion">
+      <Column Name="ubi_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ubi_provincia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ubi_canton" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ubi_sector" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ubi_direccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ubi_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tbl_ubicacion_tbl_propiedad" Member="tbl_propiedad" ThisKey="ubi_id" OtherKey="ubi_id" Type="tbl_propiedad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_usuario" Member="tbl_usuario">
+    <Type Name="tbl_usuario">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usu_primer_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_segundo_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_primer_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_segundo_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_direccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_contra" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="usu_telefono" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intentos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="usu_fecha_registro" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="perf_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inm_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_usuario_tbl_cita" Member="tbl_cita" ThisKey="usu_id" OtherKey="usu_id" Type="tbl_cita" />
+      <Association Name="tbl_usuario_tbl_propiedad" Member="tbl_propiedad" ThisKey="usu_id" OtherKey="inm_id" Type="tbl_propiedad" />
+      <Association Name="tbl_usuario_tbl_propiedad1" Member="tbl_propiedad1" ThisKey="usu_id" OtherKey="usu_comp_id" Type="tbl_propiedad" />
+      <Association Name="tbl_inmobiliaria_tbl_usuario" Member="tbl_inmobiliaria" ThisKey="inm_id" OtherKey="inm_id" Type="tbl_inmobiliaria" IsForeignKey="true" />
+      <Association Name="tbl_perfil_tbl_usuario" Member="tbl_perfil" ThisKey="perf_id" OtherKey="perf_id" Type="tbl_perfil" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.cambiar_pass" Method="cambiar_pass">
+    <Parameter Name="v_pass" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_correo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_opc" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.restaurar_intentos" Method="restaurar_intentos">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_antiguedad" Method="editar_antiguedad">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_nom" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_caracteristicas" Method="editar_caracteristicas">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_habitaciones" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_banos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_estacionamientos" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_imagen" Method="editar_imagen">
+    <Parameter Name="v_img_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_img_url" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="v_pro_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_perfil" Method="editar_perfil">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_nom" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_desc" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_plano" Method="editar_plano">
+    <Parameter Name="v_pla_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_pla_url" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="v_pro_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_tipo_inmueble" Method="editar_tipo_inmueble">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_nom" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_tipo_operacion" Method="editar_tipo_operacion">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_nom" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_ubicacion" Method="editar_ubicacion">
+    <Parameter Name="v_ubi_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_ubi_provincia" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_ubi_canton" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_ubi_sector" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_ubi_direccion" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_video" Method="editar_video">
+    <Parameter Name="v_vid_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_vid_url" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="v_pro_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_antiguedad" Method="eliminar_antiguedad">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_caracteristicas" Method="eliminar_caracteristicas">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_cita" Method="eliminar_cita">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_imagen" Method="eliminar_imagen">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_perfil" Method="eliminar_perfil">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_plano" Method="eliminar_plano">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_propiedad" Method="eliminar_propiedad">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_tipo_inmueble" Method="eliminar_tipo_inmueble">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_tipo_operacion" Method="eliminar_tipo_operacion">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_ubicacion" Method="eliminar_ubicacion">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_usuario" Method="eliminar_usuario">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_video" Method="eliminar_video">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_antiguedad" Method="registrar_antiguedad">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_nom" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_caracteristicas" Method="registrar_caracteristicas">
+    <Parameter Name="v_habitaciones" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_banos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_estacionamientos" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_imagen" Method="registrar_imagen">
+    <Parameter Name="v_img_url" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="v_pro_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_perfil" Method="registrar_perfil">
+    <Parameter Name="v_nom" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_desc" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_plano" Method="registrar_plano">
+    <Parameter Name="v_pla_url" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="pro_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_tipo_inmueble" Method="registrar_tipo_inmueble">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_nom" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_tipo_operacion" Method="registrar_tipo_operacion">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_nom" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_ubicacion" Method="registrar_ubicacion">
+    <Parameter Name="v_provincia" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_canton" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_sector" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_direccion" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_video" Method="registrar_video">
+    <Parameter Name="v_vid_url" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="v_pro_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.restar_intentos" Method="restar_intentos">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.hashearPass" Method="hashearPass" IsComposable="true">
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.recibir_intentos" Method="recibir_intentos" IsComposable="true">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_inmobiliaria" Method="editar_inmobiliaria">
+    <Parameter Name="v_inm_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_inm_nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_inm_direccion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="v_inm_ruc" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="v_inm_razon_social" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="v_inm_telefono" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="v_inm_correo" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="v_inm_imagen" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_inmobiliaria" Method="eliminar_inmobiliaria">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_inmobiliaria" Method="registrar_inmobiliaria">
+    <Parameter Name="v_nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_direccion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="v_ruc" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="v_razon_social" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="v_telefono" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="v_correo" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="v_imagen" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_usuario_mant" Method="editar_usuario_mant">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_pnombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_snombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_papellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_sapellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_correo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="v_cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="v_direccion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="v_fecha_nac" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="v_telefono" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="v_perf" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_inm" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_propiedad" Method="editar_propiedad">
+    <Parameter Name="v_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_titulo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="v_precio" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="v_area_total" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_area_construida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_alicuota" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="v_descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="v_coordenadas" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="v_caract_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_tipo_operacion_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_tipo_inmueble_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_antiguedad_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_inm_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_comp_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_ubi_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_propiedad" Method="registrar_propiedad">
+    <Parameter Name="v_titulo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="v_precio" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="v_area_total" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_area_construida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_alicuota" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="v_descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="v_coordenadas" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="v_caract_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_tipo_operacion_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_tipo_inmueble_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_antiguedad_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_inm_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_comp_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_ubi_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editar_cita" Method="editar_cita">
+    <Parameter Name="v_cit_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_comentarioAgente" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="v_descripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="v_hora_cita" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="v_fecha_cita" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="v_estado" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_usu_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_pro_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_cita" Method="registrar_cita">
+    <Parameter Name="v_comentarioAgente" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="v_descripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="v_hora_cita" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="v_fecha_cita" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="v_estado" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_usu_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_pro_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_usuario" Method="registrar_usuario">
+    <Parameter Name="v_pnombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_snombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_papellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_sapellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_correo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="v_cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="v_direccion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="v_fecha_nac" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="v_password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="v_telefono" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="v_perf" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_inm" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

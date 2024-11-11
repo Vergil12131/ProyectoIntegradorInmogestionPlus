@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 19.25" name="CdInmogestionPlus">
+  <DataContextMoniker Name="/CdInmogestionPlusDataContext" />
+  <nestedChildShapes>
+    <classShape Id="000bf004-10b9-4a7e-9570-31ac0642ab01" absoluteBounds="6.5, 8.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_antiguedad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec2e695a-d830-4f4c-b8c3-d843e8402786" absoluteBounds="6.515, 8.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1733cf5e-f12d-4929-b47d-9c7174f70ef5" absoluteBounds="12, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_video" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84c7868b-b1a1-4e7b-899c-8a3ad4c05aad" absoluteBounds="12.015, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ccff484b-24df-433d-9002-4a40f9acec34" absoluteBounds="6.5, 14.5, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_caracteristicas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6aa0127f-18a7-4559-81c1-c58393f34e83" absoluteBounds="6.515, 14.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c12bb8cd-4872-434c-95ad-af2f53d2c221" absoluteBounds="6.25, 4.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_cita" />
+      <nestedChildShapes>
+        <elementListCompartment Id="429a165e-5da4-4940-9b80-fe32825ffd95" absoluteBounds="6.265, 5.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bac5634e-ce5a-46b3-8d2d-62ffdfbea24a" absoluteBounds="12, 5.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_imagen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1d4fbe8-dc96-4551-bd09-862f671b5a1c" absoluteBounds="12.015, 5.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5e372be-7290-4e09-9f42-b585670292bd" absoluteBounds="0.75, 1.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_inmobiliaria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d290b87-b472-47db-9c0f-fce3b204eac6" absoluteBounds="0.765, 2.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8c51d90-b7db-414a-848f-818e6457a43b" absoluteBounds="0.75, 5.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_perfil" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df0ce0c8-1cbc-459f-9174-51fb014a702b" absoluteBounds="0.765, 5.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="afdb95d4-ddfc-462c-9468-0517aa7d9638" absoluteBounds="12, 7.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_plano" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9c3ad78-6a1f-4549-9e68-85795f116526" absoluteBounds="12.015, 7.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" absoluteBounds="9.25, 3.875, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_propiedad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="118e0b93-abbe-4234-9468-3f08d2010950" absoluteBounds="9.265, 4.335, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="17a60a01-47a9-499a-86ba-adc4ef8476d4" absoluteBounds="6.5, 10.25, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_tipo_inmueble" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f257bcb-2082-41e5-aa3b-e28c081a392f" absoluteBounds="6.515, 10.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ece59bce-a752-4857-8c03-c390a432980e" absoluteBounds="6.5, 12.375, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_tipo_operacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef5f3109-b842-45ea-b366-ec6d6330750f" absoluteBounds="6.515, 12.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7179f6a3-7918-473f-916c-43cab5954eb0" absoluteBounds="6.5, 17, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_ubicacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e6d0522-190d-4bbb-a624-2f6809f51379" absoluteBounds="6.515, 17.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe070402-bcdd-43ff-9809-aff2553d8217" absoluteBounds="3.5, 4, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/CdInmogestionPlusDataContext/tbl_usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c2c3ab5-7ae7-4833-ab67-b8775f5c20be" absoluteBounds="3.515, 4.46, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.25 : 4.16429768880208); (12 : 4.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_propiedad/tbl_propiedad_tbl_video" />
+      <nodes>
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+        <classShapeMoniker Id="1733cf5e-f12d-4929-b47d-9c7174f70ef5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.25 : 5.92390055338542); (8.25 : 5.92390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_propiedad/tbl_propiedad_tbl_cita" />
+      <nodes>
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+        <classShapeMoniker Id="c12bb8cd-4872-434c-95ad-af2f53d2c221" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 5.91429768880208); (12 : 5.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_propiedad/tbl_propiedad_tbl_imagen" />
+      <nodes>
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+        <classShapeMoniker Id="bac5634e-ce5a-46b3-8d2d-62ffdfbea24a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 7.72675699869792); (12 : 7.72675699869792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_propiedad/tbl_propiedad_tbl_plano" />
+      <nodes>
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+        <classShapeMoniker Id="afdb95d4-ddfc-462c-9468-0517aa7d9638" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 8.81814697265625); (9.63541416666667 : 8.81814697265625 : JumpStart); (9.80208083333333 : 8.81814697265625 : JumpEnd); (10.25 : 8.81814697265625); (10.25 : 7.95351399739583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_antiguedad/tbl_antiguedad_tbl_propiedad" />
+      <nodes>
+        <classShapeMoniker Id="000bf004-10b9-4a7e-9570-31ac0642ab01" />
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 15.3854484049479); (9.7187475 : 15.3854484049479); (9.7187475 : 7.95351399739583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_caracteristicas/tbl_caracteristicas_tbl_propiedad" />
+      <nodes>
+        <classShapeMoniker Id="ccff484b-24df-433d-9002-4a40f9acec34" />
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 10.9431469726562); (9.36978791666667 : 10.9431469726562 : JumpStart); (9.53645458333333 : 10.9431469726562 : JumpEnd); (9.63541416666667 : 10.9431469726562 : JumpStart); (9.80208083333333 : 10.9431469726562 : JumpEnd); (10.7812525 : 10.9431469726562); (10.7812525 : 7.95351399739583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_tipo_inmueble/tbl_tipo_inmueble_tbl_propiedad" />
+      <nodes>
+        <classShapeMoniker Id="17a60a01-47a9-499a-86ba-adc4ef8476d4" />
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 13.0681469726562); (9.45312125 : 13.0681469726562); (9.45312125 : 7.95351399739583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_tipo_operacion/tbl_tipo_operacion_tbl_propiedad" />
+      <nodes>
+        <classShapeMoniker Id="ece59bce-a752-4857-8c03-c390a432980e" />
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 17.9815991210938); (9.98437375 : 17.9815991210938); (9.98437375 : 7.95351399739583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_ubicacion/tbl_ubicacion_tbl_propiedad" />
+      <nodes>
+        <classShapeMoniker Id="7179f6a3-7918-473f-916c-43cab5954eb0" />
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.92390055338542); (6.25 : 5.92390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_usuario/tbl_usuario_tbl_cita" />
+      <nodes>
+        <classShapeMoniker Id="fe070402-bcdd-43ff-9809-aff2553d8217" />
+        <classShapeMoniker Id="c12bb8cd-4872-434c-95ad-af2f53d2c221" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.5232568359375); (9.25 : 7.5232568359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_usuario/tbl_usuario_tbl_propiedad" />
+      <nodes>
+        <classShapeMoniker Id="fe070402-bcdd-43ff-9809-aff2553d8217" />
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.34375); (9.25 : 4.34375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_usuario/tbl_usuario_tbl_propiedad1" />
+      <nodes>
+        <classShapeMoniker Id="fe070402-bcdd-43ff-9809-aff2553d8217" />
+        <classShapeMoniker Id="0b6603b0-462f-4b55-a172-955e9d0bb04e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.8749995); (4.5 : 2.8749995); (4.5 : 4)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_inmobiliaria/tbl_inmobiliaria_tbl_usuario" />
+      <nodes>
+        <classShapeMoniker Id="d5e372be-7290-4e09-9f42-b585670292bd" />
+        <classShapeMoniker Id="fe070402-bcdd-43ff-9809-aff2553d8217" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.91429768880208); (3.5 : 5.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CdInmogestionPlusDataContext/tbl_perfil/tbl_perfil_tbl_usuario" />
+      <nodes>
+        <classShapeMoniker Id="c8c51d90-b7db-414a-848f-818e6457a43b" />
+        <classShapeMoniker Id="fe070402-bcdd-43ff-9809-aff2553d8217" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

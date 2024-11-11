@@ -1,0 +1,776 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0538BCA3-2CCE-4354-BD16-F526328707E5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoIntegradorInmogestionPlus</RootNamespace>
+    <AssemblyName>ProyectoIntegradorInmogestionPlus</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADM_antiguedad.aspx" />
+    <Content Include="ADM_caracteristica.aspx" />
+    <Content Include="ADM_cita.aspx" />
+    <Content Include="ADM_imagen.aspx" />
+    <Content Include="ADM_inmueble.aspx" />
+    <Content Include="ADM_perfil.aspx" />
+    <Content Include="ADM_plano.aspx" />
+    <Content Include="ADM_propiedades.aspx" />
+    <Content Include="ADM_TipoInmueble.aspx" />
+    <Content Include="ADM_TipoOperacion.aspx" />
+    <Content Include="ADM_ubicacion.aspx" />
+    <Content Include="ADM_usuario.aspx" />
+    <Content Include="ADM_video.aspx" />
+    <Content Include="AgendarCitas.aspx" />
+    <Content Include="Avisos.aspx" />
+    <Content Include="Citas.aspx" />
+    <Content Include="Codigo.aspx" />
+    <Content Include="Codigo_verificacion_correo_definitivo.aspx" />
+    <Content Include="Detalle_propiedad.aspx" />
+    <Content Include="InformacionPoliticas.aspx" />
+    <Content Include="Informacion_Definitivo.aspx" />
+    <Content Include="Inicio_Sesion_Definitivo.aspx" />
+    <Content Include="NuevaContra.aspx" />
+    <Content Include="Nueva_Contraseña_Definitivo.aspx" />
+    <Content Include="pagina_principal.aspx" />
+    <Content Include="publicacion2_definitivoEdicion.aspx" />
+    <Content Include="publicacion2_definitivo.aspx" />
+    <Content Include="publicacion3_definitivoEdicion.aspx" />
+    <Content Include="publicacion3_definitivo.aspx" />
+    <Content Include="publicacion4_definitivoEdicion.aspx" />
+    <Content Include="publicacion4_definitivo.aspx" />
+    <Content Include="publicacion5_definitivoEdicion.aspx" />
+    <Content Include="publicacion5_definitivo.aspx" />
+    <Content Include="Publicacion_DefinitivoEdicion.aspx" />
+    <Content Include="Publicacion_Definitivo.aspx" />
+    <Content Include="Rcuperar_Contra_Definitivo.aspx" />
+    <Content Include="RecuperarContra.aspx" />
+    <Content Include="Registro_Definitivo.aspx" />
+    <Content Include="ReporteTemp.aspx" />
+    <Content Include="Servico_Tecnico.aspx" />
+    <Content Include="simuladorDefinitivo.aspx" />
+    <Content Include="simuladorDefinitivoBck.aspx" />
+    <Content Include="source\css\SimuladorStyle.css" />
+    <Content Include="source\images\home\Credito.png" />
+    <Content Include="source\images\home\ImgAvisos\archivados.png" />
+    <Content Include="source\images\home\ImgAvisos\aviso.png" />
+    <Content Include="source\images\home\ImgAvisos\busqueda.png" />
+    <Content Include="source\images\home\ImgAvisos\completar.png" />
+    <Content Include="source\images\home\ImgAvisos\consultas.png" />
+    <Content Include="source\images\home\ImgAvisos\duplicados.png" />
+    <Content Include="source\images\home\ImgAvisos\informacion.png" />
+    <Content Include="source\images\home\ImgAvisos\productos.png" />
+    <Content Include="source\images\home\ImgHome\Imagen1.jpg" />
+    <Content Include="source\images\home\ImgHome\Imagen2.jpg" />
+    <Content Include="source\images\home\ImgHome\Imagen3.jpg" />
+    <Content Include="source\images\home\ImgInicioSesion\avioncito.jpeg" />
+    <Content Include="source\images\home\ImgInicioSesion\Facebook.jpeg" />
+    <Content Include="source\images\home\ImgInicioSesion\ImagenLogo.png" />
+    <Content Include="source\images\home\ImgInicioSesion\ImgLoginn.jpeg" />
+    <Content Include="source\images\home\ImgInicioSesion\Instagram.jpeg" />
+    <Content Include="source\images\home\ImgInicioSesion\LogoNegro.png" />
+    <Content Include="source\images\home\ImgInicioSesion\Twitter.jpeg" />
+    <Content Include="source\images\home\ImgInicioSesion\WhatsApp.jpeg" />
+    <Content Include="source\images\home\imnumelble.png" />
+    <Content Include="source\images\home\Inmogestion_plus.png" />
+    <Content Include="source\images\home\logo.png" />
+    <Content Include="source\images\home\Soporte_tecnico.png" />
+    <Content Include="source\images\login\ImgBancoPichincha\campana.jpg" />
+    <Content Include="source\images\login\ImgBancoPichincha\dolar.jpg" />
+    <Content Include="source\images\login\ImgBancoPichincha\personas.jpg" />
+    <Content Include="source\images\login\ImgBancoPichincha\reloj.jpg" />
+    <Content Include="source\images\login\ImgBancoPichincha\Retrato de familia feliz jugando, divirtiéndose en casa _ Foto Premium.jpg" />
+    <Content Include="source\images\login\ImgHomePage\Imagen1.jpg" />
+    <Content Include="source\images\login\ImgHomePage\Imagen2.jpg" />
+    <Content Include="source\images\login\ImgHomePage\Imagen3.jpg" />
+    <Content Include="source\images\login\ImgHome\Imagen1.jpg" />
+    <Content Include="source\images\login\ImgHome\Imagen2.jpg" />
+    <Content Include="source\images\login\ImgHome\Imagen3.jpg" />
+    <Content Include="source\images\login\ImgInicioSesion\avioncito.jpeg" />
+    <Content Include="source\images\login\ImgInicioSesion\Facebook.jpeg" />
+    <Content Include="source\images\login\ImgInicioSesion\ImagenLogo.png" />
+    <Content Include="source\images\login\ImgInicioSesion\ImgLoginn.jpeg" />
+    <Content Include="source\images\login\ImgInicioSesion\Instagram.jpeg" />
+    <Content Include="source\images\login\ImgInicioSesion\LogoNegro.png" />
+    <Content Include="source\images\login\ImgInicioSesion\Twitter.jpeg" />
+    <Content Include="source\images\login\ImgInicioSesion\WhatsApp.jpeg" />
+    <Content Include="source\images\mantenimiento\Imagenes\Akana_prin.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Akana_sec.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Akana_sec1.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Akana_sec2.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Akana_sec3.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\antiguedad.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\BOULEVAR_CASA.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Camaara.jpg" />
+    <Content Include="source\images\mantenimiento\Imagenes\caracteristicas.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\cita.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\conocoto.jpg" />
+    <Content Include="source\images\mantenimiento\Imagenes\Filtros.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Flecha_soporte.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_Empresa.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_Inmmo.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_Plano.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_Planos.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_Propiedad.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_Tinmueble.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_Toperacion.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_ubicacion.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_Usuario.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\Gestion_video.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\image.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\ImagenLogo.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\inmueble.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\LUZ_CASA.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\mi_casa.jpg" />
+    <Content Include="source\images\mantenimiento\Imagenes\NOVA_CASA.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\perfil.png" />
+    <Content Include="source\images\mantenimiento\Imagenes\usuariooo.png" />
+    <Content Include="source\images\mantenimiento\Videos\Ejemplo_video.gif" />
+    <Content Include="source\images\mantenimiento\Videos\Video_ejemplo.mp4" />
+    <Content Include="source\images\publicaciones\barra2.png" />
+    <Content Include="source\images\publicaciones\Barraconnumero.png" />
+    <Content Include="source\images\publicaciones\Barranumero3.png" />
+    <Content Include="source\images\publicaciones\iconotelefono.png" />
+    <Content Include="source\images\publicaciones\ImagenVisto.png" />
+    <Content Include="source\images\simulador\image.jpg" />
+    <Content Include="source\images\simulador\logoBanco.jpg" />
+    <Content Include="source\images\simulador\logoInmogestion.jpg" />
+    <Content Include="source\javascript\mantenimiento.js" />
+    <Content Include="source\javascript\TextToSpeech.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="VerCitasCliente.aspx" />
+    <Content Include="VerCitasClienteBck.aspx" />
+    <Content Include="Vista_Propiedades.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADM_antiguedad.aspx.cs">
+      <DependentUpon>ADM_antiguedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_antiguedad.aspx.designer.cs">
+      <DependentUpon>ADM_antiguedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_caracteristica.aspx.cs">
+      <DependentUpon>ADM_caracteristica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_caracteristica.aspx.designer.cs">
+      <DependentUpon>ADM_caracteristica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_cita.aspx.cs">
+      <DependentUpon>ADM_cita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_cita.aspx.designer.cs">
+      <DependentUpon>ADM_cita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_imagen.aspx.cs">
+      <DependentUpon>ADM_imagen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_imagen.aspx.designer.cs">
+      <DependentUpon>ADM_imagen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_inmueble.aspx.cs">
+      <DependentUpon>ADM_inmueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_inmueble.aspx.designer.cs">
+      <DependentUpon>ADM_inmueble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_perfil.aspx.cs">
+      <DependentUpon>ADM_perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_perfil.aspx.designer.cs">
+      <DependentUpon>ADM_perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_plano.aspx.cs">
+      <DependentUpon>ADM_plano.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_plano.aspx.designer.cs">
+      <DependentUpon>ADM_plano.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_propiedades.aspx.cs">
+      <DependentUpon>ADM_propiedades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_propiedades.aspx.designer.cs">
+      <DependentUpon>ADM_propiedades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_TipoInmueble.aspx.cs">
+      <DependentUpon>ADM_TipoInmueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_TipoInmueble.aspx.designer.cs">
+      <DependentUpon>ADM_TipoInmueble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_TipoOperacion.aspx.cs">
+      <DependentUpon>ADM_TipoOperacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_TipoOperacion.aspx.designer.cs">
+      <DependentUpon>ADM_TipoOperacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_ubicacion.aspx.cs">
+      <DependentUpon>ADM_ubicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_ubicacion.aspx.designer.cs">
+      <DependentUpon>ADM_ubicacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_usuario.aspx.cs">
+      <DependentUpon>ADM_usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_usuario.aspx.designer.cs">
+      <DependentUpon>ADM_usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM_video.aspx.cs">
+      <DependentUpon>ADM_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM_video.aspx.designer.cs">
+      <DependentUpon>ADM_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgendarCitas.aspx.cs">
+      <DependentUpon>AgendarCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgendarCitas.aspx.designer.cs">
+      <DependentUpon>AgendarCitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Avisos.aspx.cs">
+      <DependentUpon>Avisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Avisos.aspx.designer.cs">
+      <DependentUpon>Avisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Avisos.Master.cs">
+      <DependentUpon>Avisos.MASTER</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Avisos.Master.designer.cs">
+      <DependentUpon>Avisos.MASTER</DependentUpon>
+    </Compile>
+    <Compile Include="Citas.aspx.cs">
+      <DependentUpon>Citas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Citas.aspx.designer.cs">
+      <DependentUpon>Citas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Codigo.aspx.cs">
+      <DependentUpon>Codigo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codigo.aspx.designer.cs">
+      <DependentUpon>Codigo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Codigo.Master.cs">
+      <DependentUpon>Codigo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codigo.Master.designer.cs">
+      <DependentUpon>Codigo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Codigo_Verificacion.Master.cs">
+      <DependentUpon>Codigo_Verificacion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codigo_Verificacion.Master.designer.cs">
+      <DependentUpon>Codigo_Verificacion.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Codigo_verificacion_correo_definitivo.aspx.cs">
+      <DependentUpon>Codigo_verificacion_correo_definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codigo_verificacion_correo_definitivo.aspx.designer.cs">
+      <DependentUpon>Codigo_verificacion_correo_definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_propiedad.aspx.cs">
+      <DependentUpon>Detalle_propiedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detalle_propiedad.aspx.designer.cs">
+      <DependentUpon>Detalle_propiedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informacion.Master.cs">
+      <DependentUpon>Informacion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informacion.Master.designer.cs">
+      <DependentUpon>Informacion.Master</DependentUpon>
+    </Compile>
+    <Compile Include="InformacionPoliticas.aspx.cs">
+      <DependentUpon>InformacionPoliticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InformacionPoliticas.aspx.designer.cs">
+      <DependentUpon>InformacionPoliticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informacion_Definitivo.aspx.cs">
+      <DependentUpon>Informacion_Definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informacion_Definitivo.aspx.designer.cs">
+      <DependentUpon>Informacion_Definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio_Sesion.Master.cs">
+      <DependentUpon>Inicio_Sesion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio_Sesion.Master.designer.cs">
+      <DependentUpon>Inicio_Sesion.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio_Sesion_Definitivo.aspx.cs">
+      <DependentUpon>Inicio_Sesion_Definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio_Sesion_Definitivo.aspx.designer.cs">
+      <DependentUpon>Inicio_Sesion_Definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento.Master.cs">
+      <DependentUpon>Mantenimiento.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento.Master.designer.cs">
+      <DependentUpon>Mantenimiento.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaContra.aspx.cs">
+      <DependentUpon>NuevaContra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaContra.aspx.designer.cs">
+      <DependentUpon>NuevaContra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaContra.Master.cs">
+      <DependentUpon>NuevaContra.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaContra.Master.designer.cs">
+      <DependentUpon>NuevaContra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Nueva_Contraseña.Master.cs">
+      <DependentUpon>Nueva_Contraseña.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nueva_Contraseña.Master.designer.cs">
+      <DependentUpon>Nueva_Contraseña.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Nueva_Contraseña_Definitivo.aspx.cs">
+      <DependentUpon>Nueva_Contraseña_Definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nueva_Contraseña_Definitivo.aspx.designer.cs">
+      <DependentUpon>Nueva_Contraseña_Definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pagina_principal.aspx.cs">
+      <DependentUpon>pagina_principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pagina_principal.aspx.designer.cs">
+      <DependentUpon>pagina_principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal_inicio.Master.cs">
+      <DependentUpon>Principal_inicio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal_inicio.Master.designer.cs">
+      <DependentUpon>Principal_inicio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publicacion.Master.cs">
+      <DependentUpon>Publicacion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publicacion.Master.designer.cs">
+      <DependentUpon>Publicacion.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Publicacion2.Master.cs">
+      <DependentUpon>Publicacion2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publicacion2.Master.designer.cs">
+      <DependentUpon>Publicacion2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="publicacion2_definitivoEdicion.aspx.cs">
+      <DependentUpon>publicacion2_definitivoEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicacion2_definitivoEdicion.aspx.designer.cs">
+      <DependentUpon>publicacion2_definitivoEdicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="publicacion2_definitivo.aspx.cs">
+      <DependentUpon>publicacion2_definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicacion2_definitivo.aspx.designer.cs">
+      <DependentUpon>publicacion2_definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publicacion3.Master.cs">
+      <DependentUpon>Publicacion3.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publicacion3.Master.designer.cs">
+      <DependentUpon>Publicacion3.Master</DependentUpon>
+    </Compile>
+    <Compile Include="publicacion3_definitivoEdicion.aspx.cs">
+      <DependentUpon>publicacion3_definitivoEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicacion3_definitivoEdicion.aspx.designer.cs">
+      <DependentUpon>publicacion3_definitivoEdicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="publicacion3_definitivo.aspx.cs">
+      <DependentUpon>publicacion3_definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicacion3_definitivo.aspx.designer.cs">
+      <DependentUpon>publicacion3_definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publicacion4.Master.cs">
+      <DependentUpon>Publicacion4.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publicacion4.Master.designer.cs">
+      <DependentUpon>Publicacion4.Master</DependentUpon>
+    </Compile>
+    <Compile Include="publicacion4_definitivoEdicion.aspx.cs">
+      <DependentUpon>publicacion4_definitivoEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicacion4_definitivoEdicion.aspx.designer.cs">
+      <DependentUpon>publicacion4_definitivoEdicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="publicacion4_definitivo.aspx.cs">
+      <DependentUpon>publicacion4_definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicacion4_definitivo.aspx.designer.cs">
+      <DependentUpon>publicacion4_definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="publicacion5_definitivoEdicion.aspx.cs">
+      <DependentUpon>publicacion5_definitivoEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicacion5_definitivoEdicion.aspx.designer.cs">
+      <DependentUpon>publicacion5_definitivoEdicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="publicacion5_definitivo.aspx.cs">
+      <DependentUpon>publicacion5_definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicacion5_definitivo.aspx.designer.cs">
+      <DependentUpon>publicacion5_definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publicacion_DefinitivoEdicion.aspx.cs">
+      <DependentUpon>Publicacion_DefinitivoEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publicacion_DefinitivoEdicion.aspx.designer.cs">
+      <DependentUpon>Publicacion_DefinitivoEdicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publicacion_Definitivo.aspx.cs">
+      <DependentUpon>Publicacion_Definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publicacion_Definitivo.aspx.designer.cs">
+      <DependentUpon>Publicacion_Definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rcuperar_Contra_Definitivo.aspx.cs">
+      <DependentUpon>Rcuperar_Contra_Definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rcuperar_Contra_Definitivo.aspx.designer.cs">
+      <DependentUpon>Rcuperar_Contra_Definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarContra.aspx.cs">
+      <DependentUpon>RecuperarContra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarContra.aspx.designer.cs">
+      <DependentUpon>RecuperarContra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarContra.Master.cs">
+      <DependentUpon>RecuperarContra.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarContra.Master.designer.cs">
+      <DependentUpon>RecuperarContra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Recuperar_Contra.Master.cs">
+      <DependentUpon>Recuperar_Contra.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recuperar_Contra.Master.designer.cs">
+      <DependentUpon>Recuperar_Contra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.Master.cs">
+      <DependentUpon>Registro.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.Master.designer.cs">
+      <DependentUpon>Registro.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Registro_Definitivo.aspx.cs">
+      <DependentUpon>Registro_Definitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro_Definitivo.aspx.designer.cs">
+      <DependentUpon>Registro_Definitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteTemp.aspx.cs">
+      <DependentUpon>ReporteTemp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteTemp.aspx.designer.cs">
+      <DependentUpon>ReporteTemp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Servico_Tecnico.aspx.cs">
+      <DependentUpon>Servico_Tecnico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Servico_Tecnico.aspx.designer.cs">
+      <DependentUpon>Servico_Tecnico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="simulador.Master.cs">
+      <DependentUpon>simulador.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="simulador.Master.designer.cs">
+      <DependentUpon>simulador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="simuladorDefinitivo.aspx.cs">
+      <DependentUpon>simuladorDefinitivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="simuladorDefinitivo.aspx.designer.cs">
+      <DependentUpon>simuladorDefinitivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="simuladorDefinitivoBck.aspx.cs">
+      <DependentUpon>simuladorDefinitivoBck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="simuladorDefinitivoBck.aspx.designer.cs">
+      <DependentUpon>simuladorDefinitivoBck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="VerCitasCliente.aspx.cs">
+      <DependentUpon>VerCitasCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCitasCliente.aspx.designer.cs">
+      <DependentUpon>VerCitasCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCitasClienteBck.aspx.cs">
+      <DependentUpon>VerCitasClienteBck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCitasClienteBck.aspx.designer.cs">
+      <DependentUpon>VerCitasClienteBck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista_Propiedades.aspx.cs">
+      <DependentUpon>Vista_Propiedades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista_Propiedades.aspx.designer.cs">
+      <DependentUpon>Vista_Propiedades.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Inicio_Sesion.Master" />
+    <Content Include="Mantenimiento.Master" />
+    <Content Include="Codigo.Master" />
+    <Content Include="NuevaContra.Master" />
+    <Content Include="Codigo_Verificacion.Master" />
+    <Content Include="Nueva_Contraseña.Master" />
+    <Content Include="Avisos.MASTER" />
+    <Content Include="Informacion.Master" />
+    <Content Include="source\images\home\ImgInicioSesion\desktop.ini" />
+    <Content Include="Principal_inicio.Master" />
+    <Content Include="Registro.Master" />
+    <Content Include="simulador.Master" />
+    <Content Include="RecuperarContra.Master" />
+    <Content Include="Publicacion.Master" />
+    <Content Include="Publicacion2.Master" />
+    <Content Include="Publicacion4.Master" />
+    <Content Include="Recuperar_Contra.Master" />
+    <Content Include="Publicacion3.Master" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{0d14508e-10fd-41e8-a3c4-2b249d89b861}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{03862d7d-c68b-4000-b4b8-74fed143c159}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="uploads\imagenes\" />
+    <Folder Include="uploads\planos\" />
+    <Folder Include="uploads\videos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InmueblesActivos.rdlc" />
+    <EmbeddedResource Include="PropiedadesVendidas.rdlc" />
+    <EmbeddedResource Include="TransaccionesPropiedades.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58809</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58809/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

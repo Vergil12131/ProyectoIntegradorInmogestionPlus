@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ProyectoIntegradorInmogestionPlusConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProyectoIntegradorInmogestionPlusConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ProyectoIntegradorInmogestionPlusConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TransaccionesPropiedadesTableAdapter" GeneratorDataComponentClassName="TransaccionesPropiedadesTableAdapter" Name="TransaccionesPropiedades" UserDataComponentName="TransaccionesPropiedadesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProyectoIntegradorInmogestionPlusConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*) AS total_transacciones, SUM(CASE WHEN tpo.tope_nombre = 'Alquiler' AND prop.pro_estado = 'A' THEN prop.pro_precio ELSE 0 END) AS total_valor_alquiler, SUM(CASE WHEN tpo.tope_nombre = 'Venta' AND 
+                  prop.pro_estado = 'A' THEN prop.pro_precio ELSE 0 END) AS total_valor_venta, SUM(CASE WHEN tpo.tope_nombre = 'Temporal' AND prop.pro_estado = 'A' THEN prop.pro_precio ELSE 0 END) AS total_valor_temporal, 
+                  AVG(CASE WHEN tpo.tope_nombre = 'Alquiler' AND prop.pro_estado = 'A' THEN prop.pro_precio ELSE NULL END) AS promedio_precio_alquiler, AVG(CASE WHEN tpo.tope_nombre = 'Venta' AND 
+                  prop.pro_estado = 'A' THEN prop.pro_precio ELSE NULL END) AS promedio_precio_venta, AVG(CASE WHEN tpo.tope_nombre = 'Temporal' AND prop.pro_estado = 'A' THEN prop.pro_precio ELSE NULL END) 
+                  AS promedio_precio_temporal
+FROM     tbl_propiedad AS prop INNER JOIN
+                  tbl_tipo_operacion AS tpo ON prop.tope_id = tpo.tope_id
+WHERE  (FORMAT(prop.pro_fecha_registro, 'yyyy-MM') = '2024-08') AND (tpo.tope_estado = 'A') AND (prop.pro_estado = 'A')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="total_transacciones" DataSetColumn="total_transacciones" />
+              <Mapping SourceColumn="total_valor_alquiler" DataSetColumn="total_valor_alquiler" />
+              <Mapping SourceColumn="total_valor_venta" DataSetColumn="total_valor_venta" />
+              <Mapping SourceColumn="total_valor_temporal" DataSetColumn="total_valor_temporal" />
+              <Mapping SourceColumn="promedio_precio_alquiler" DataSetColumn="promedio_precio_alquiler" />
+              <Mapping SourceColumn="promedio_precio_venta" DataSetColumn="promedio_precio_venta" />
+              <Mapping SourceColumn="promedio_precio_temporal" DataSetColumn="promedio_precio_temporal" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InmueblesActivosTableAdapter" GeneratorDataComponentClassName="InmueblesActivosTableAdapter" Name="InmueblesActivos" UserDataComponentName="InmueblesActivosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProyectoIntegradorInmogestionPlusConnectionString (Web.config)" DbObjectName="ProyectoIntegradorInmogestionPlus.dbo.tbl_ubicacion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ubi.ubi_provincia, ubi.ubi_canton, ubi.ubi_sector, COUNT(prop.pro_id) AS total_inmuebles, SUM(prop.pro_precio) AS valor_total_inmuebles
+FROM     tbl_propiedad AS prop INNER JOIN
+                  tbl_ubicacion AS ubi ON prop.ubi_id = ubi.ubi_id
+WHERE  (prop.pro_estado = 'A') AND (ubi.ubi_estado = 'A')
+GROUP BY ubi.ubi_provincia, ubi.ubi_canton, ubi.ubi_sector</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ubi_provincia" DataSetColumn="ubi_provincia" />
+              <Mapping SourceColumn="ubi_canton" DataSetColumn="ubi_canton" />
+              <Mapping SourceColumn="ubi_sector" DataSetColumn="ubi_sector" />
+              <Mapping SourceColumn="total_inmuebles" DataSetColumn="total_inmuebles" />
+              <Mapping SourceColumn="valor_total_inmuebles" DataSetColumn="valor_total_inmuebles" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PropiedadesVendidasTableAdapter" GeneratorDataComponentClassName="PropiedadesVendidasTableAdapter" Name="PropiedadesVendidas" UserDataComponentName="PropiedadesVendidasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProyectoIntegradorInmogestionPlusConnectionString (Web.config)" DbObjectName="ProyectoIntegradorInmogestionPlus.dbo.tbl_propiedad" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT prop.pro_id, prop.pro_titulo, prop.pro_precio, FORMAT(prop.pro_fecha_registro, 'yyyy-MM-dd') AS fecha_venta, u.usu_primer_nombre + ' ' + u.usu_primer_apellido AS comprador
+FROM     tbl_propiedad AS prop INNER JOIN
+                  tbl_tipo_operacion AS tpo ON prop.tope_id = tpo.tope_id INNER JOIN
+                  tbl_usuario AS u ON prop.usu_comp_id = u.usu_id
+WHERE  (prop.pro_estado = 'A') AND (tpo.tope_estado = 'A') AND (u.usu_estado = 'A') AND (tpo.tope_nombre = 'Venta') AND (FORMAT(prop.pro_fecha_registro, 'yyyy-MM') = '2024-08')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="pro_id" DataSetColumn="pro_id" />
+              <Mapping SourceColumn="pro_titulo" DataSetColumn="pro_titulo" />
+              <Mapping SourceColumn="pro_precio" DataSetColumn="pro_precio" />
+              <Mapping SourceColumn="fecha_venta" DataSetColumn="fecha_venta" />
+              <Mapping SourceColumn="comprador" DataSetColumn="comprador" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TransaccionesPropiedades" msprop:Generator_RowEvHandlerName="TransaccionesPropiedadesRowChangeEventHandler" msprop:Generator_RowDeletedName="TransaccionesPropiedadesRowDeleted" msprop:Generator_RowDeletingName="TransaccionesPropiedadesRowDeleting" msprop:Generator_RowEvArgName="TransaccionesPropiedadesRowChangeEvent" msprop:Generator_TablePropName="TransaccionesPropiedades" msprop:Generator_RowChangedName="TransaccionesPropiedadesRowChanged" msprop:Generator_RowChangingName="TransaccionesPropiedadesRowChanging" msprop:Generator_TableClassName="TransaccionesPropiedadesDataTable" msprop:Generator_RowClassName="TransaccionesPropiedadesRow" msprop:Generator_TableVarName="tableTransaccionesPropiedades" msprop:Generator_UserTableName="TransaccionesPropiedades">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="total_transacciones" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="total_transacciones" msprop:Generator_ColumnPropNameInTable="total_transaccionesColumn" msprop:Generator_ColumnVarNameInTable="columntotal_transacciones" msprop:Generator_UserColumnName="total_transacciones" type="xs:int" minOccurs="0" />
+              <xs:element name="total_valor_alquiler" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="total_valor_alquiler" msprop:Generator_ColumnPropNameInTable="total_valor_alquilerColumn" msprop:Generator_ColumnVarNameInTable="columntotal_valor_alquiler" msprop:Generator_UserColumnName="total_valor_alquiler" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_valor_venta" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="total_valor_venta" msprop:Generator_ColumnPropNameInTable="total_valor_ventaColumn" msprop:Generator_ColumnVarNameInTable="columntotal_valor_venta" msprop:Generator_UserColumnName="total_valor_venta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_valor_temporal" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="total_valor_temporal" msprop:Generator_ColumnPropNameInTable="total_valor_temporalColumn" msprop:Generator_ColumnVarNameInTable="columntotal_valor_temporal" msprop:Generator_UserColumnName="total_valor_temporal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="promedio_precio_alquiler" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="promedio_precio_alquiler" msprop:Generator_ColumnPropNameInTable="promedio_precio_alquilerColumn" msprop:Generator_ColumnVarNameInTable="columnpromedio_precio_alquiler" msprop:Generator_UserColumnName="promedio_precio_alquiler" type="xs:decimal" minOccurs="0" />
+              <xs:element name="promedio_precio_venta" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="promedio_precio_venta" msprop:Generator_ColumnPropNameInTable="promedio_precio_ventaColumn" msprop:Generator_ColumnVarNameInTable="columnpromedio_precio_venta" msprop:Generator_UserColumnName="promedio_precio_venta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="promedio_precio_temporal" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="promedio_precio_temporal" msprop:Generator_ColumnPropNameInTable="promedio_precio_temporalColumn" msprop:Generator_ColumnVarNameInTable="columnpromedio_precio_temporal" msprop:Generator_UserColumnName="promedio_precio_temporal" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InmueblesActivos" msprop:Generator_RowEvHandlerName="InmueblesActivosRowChangeEventHandler" msprop:Generator_RowDeletedName="InmueblesActivosRowDeleted" msprop:Generator_RowDeletingName="InmueblesActivosRowDeleting" msprop:Generator_RowEvArgName="InmueblesActivosRowChangeEvent" msprop:Generator_TablePropName="InmueblesActivos" msprop:Generator_RowChangedName="InmueblesActivosRowChanged" msprop:Generator_RowChangingName="InmueblesActivosRowChanging" msprop:Generator_TableClassName="InmueblesActivosDataTable" msprop:Generator_RowClassName="InmueblesActivosRow" msprop:Generator_TableVarName="tableInmueblesActivos" msprop:Generator_UserTableName="InmueblesActivos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ubi_provincia" msprop:Generator_ColumnPropNameInRow="ubi_provincia" msprop:Generator_ColumnPropNameInTable="ubi_provinciaColumn" msprop:Generator_ColumnVarNameInTable="columnubi_provincia" msprop:Generator_UserColumnName="ubi_provincia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ubi_canton" msprop:Generator_ColumnPropNameInRow="ubi_canton" msprop:Generator_ColumnPropNameInTable="ubi_cantonColumn" msprop:Generator_ColumnVarNameInTable="columnubi_canton" msprop:Generator_UserColumnName="ubi_canton" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ubi_sector" msprop:Generator_ColumnPropNameInRow="ubi_sector" msprop:Generator_ColumnPropNameInTable="ubi_sectorColumn" msprop:Generator_ColumnVarNameInTable="columnubi_sector" msprop:Generator_UserColumnName="ubi_sector" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total_inmuebles" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="total_inmuebles" msprop:Generator_ColumnPropNameInTable="total_inmueblesColumn" msprop:Generator_ColumnVarNameInTable="columntotal_inmuebles" msprop:Generator_UserColumnName="total_inmuebles" type="xs:int" minOccurs="0" />
+              <xs:element name="valor_total_inmuebles" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="valor_total_inmuebles" msprop:Generator_ColumnPropNameInTable="valor_total_inmueblesColumn" msprop:Generator_ColumnVarNameInTable="columnvalor_total_inmuebles" msprop:Generator_UserColumnName="valor_total_inmuebles" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PropiedadesVendidas" msprop:Generator_RowEvHandlerName="PropiedadesVendidasRowChangeEventHandler" msprop:Generator_RowDeletedName="PropiedadesVendidasRowDeleted" msprop:Generator_RowDeletingName="PropiedadesVendidasRowDeleting" msprop:Generator_RowEvArgName="PropiedadesVendidasRowChangeEvent" msprop:Generator_TablePropName="PropiedadesVendidas" msprop:Generator_RowChangedName="PropiedadesVendidasRowChanged" msprop:Generator_RowChangingName="PropiedadesVendidasRowChanging" msprop:Generator_TableClassName="PropiedadesVendidasDataTable" msprop:Generator_RowClassName="PropiedadesVendidasRow" msprop:Generator_TableVarName="tablePropiedadesVendidas" msprop:Generator_UserTableName="PropiedadesVendidas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pro_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="pro_id" msprop:Generator_ColumnPropNameInTable="pro_idColumn" msprop:Generator_ColumnVarNameInTable="columnpro_id" msprop:Generator_UserColumnName="pro_id" type="xs:int" />
+              <xs:element name="pro_titulo" msprop:Generator_ColumnPropNameInRow="pro_titulo" msprop:Generator_ColumnPropNameInTable="pro_tituloColumn" msprop:Generator_ColumnVarNameInTable="columnpro_titulo" msprop:Generator_UserColumnName="pro_titulo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pro_precio" msprop:Generator_ColumnPropNameInRow="pro_precio" msprop:Generator_ColumnPropNameInTable="pro_precioColumn" msprop:Generator_ColumnVarNameInTable="columnpro_precio" msprop:Generator_UserColumnName="pro_precio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha_venta" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="fecha_venta" msprop:Generator_ColumnPropNameInTable="fecha_ventaColumn" msprop:Generator_ColumnVarNameInTable="columnfecha_venta" msprop:Generator_UserColumnName="fecha_venta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="comprador" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="comprador" msprop:Generator_ColumnPropNameInTable="compradorColumn" msprop:Generator_ColumnVarNameInTable="columncomprador" msprop:Generator_UserColumnName="comprador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PropiedadesVendidas" />
+      <xs:field xpath="mstns:pro_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

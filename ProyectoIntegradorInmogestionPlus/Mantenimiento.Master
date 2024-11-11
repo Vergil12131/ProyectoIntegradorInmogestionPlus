@@ -1,0 +1,267 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Mantenimiento.master.cs" Inherits="ProyectoIntegradorInmogestionPlus.Mantenimiento" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 60px;
+        }
+
+        .header {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+            .header img {
+                height: 40px;
+            }
+
+        .sidebar {
+            height: 100%;
+            width: 300px;
+            position: fixed;
+            background-color: #000000;
+            padding-top: 60px; /* Ajusta según tus necesidades */
+            top: 60px;
+            overflow-y: auto; /* Asegura que la barra lateral sea desplazable */
+        }
+
+            .sidebar a {
+                padding: 15px; /* Tamaño original */
+                text-decoration: none;
+                font-size: 18px; /* Tamaño original */
+                color: white;
+                display: flex;
+                align-items: center;
+            }
+
+                .sidebar a:hover {
+                    background-color: #575d63;
+                }
+
+        .sidebar-icon {
+            height: 25px; /* Tamaño original */
+            margin-right: 10px; /* Espacio entre la imagen y el texto */
+        }
+
+        .content {
+            margin-left: 310px; /* Asegúrate de que el contenido no se superponga con la barra lateral */
+            padding: 20px;
+        }
+
+            .content h2 {
+                margin-bottom: 20px;
+            }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+        }
+
+        .btn-custom {
+            font-size: 16px; /* Tamaño del texto del botón */
+            padding: 10px 50px; /* Espacio interno del botón */
+            margin: 10px; /* Espacio entre los botones */
+            transition: all 0.3s ease; /* Transición suave */
+            border-width: 2px;
+        }
+
+        .btn-add {
+            border-color: green;
+            color: green;
+        }
+
+            .btn-add:hover {
+                background-color: green;
+                color: white;
+            }
+
+        .btn-edit {
+            border-color: blue;
+            color: blue;
+        }
+
+            .btn-edit:hover {
+                background-color: blue;
+                color: white;
+            }
+
+        .btn-delete {
+            border-color: red;
+            color: red;
+        }
+
+            .btn-delete:hover {
+                background-color: red;
+                color: white;
+            }
+
+        .btn-clear {
+            border-color: grey;
+            color: grey;
+        }
+
+            .btn-clear:hover {
+                background-color: grey;
+                color: white;
+            }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /*-------------------------------*/
+
+
+        .menu-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-button {
+            cursor: pointer;
+        }
+
+        .menu-photo {
+            width: 50px; /* Ajusta el tamaño de la foto */
+            height: 50px;
+            border-radius: 50%; /* Hace que la foto sea redonda */
+        }
+
+        .dropdown-menu {
+            display: none; /* Inicialmente oculto */
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 160px;
+        }
+
+            .dropdown-menu a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-menu a:hover {
+                    background-color: #f1f1f1;
+                }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%--        <div class="header">
+            <img src="/source/images/mantenimiento/Imagenes/ImagenLogo.png" alt="Logo" />
+            <div class="dropdown">
+                <img src="/source/images/mantenimiento/Imagenes/usuariooo.png" alt="Usuario" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Revisar Perfil</a>
+                    <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>--%>
+
+        <%--<div class="header">
+            <img src="/source/images/mantenimiento/Imagenes/ImagenLogo.png" alt="Logo" />
+            <div class="user-nav">
+                <asp:Label ID="lblUserMaster" runat="server" Text="Label"></asp:Label>
+                <img src="/source/images/mantenimiento/Imagenes/usuariooo.png" alt="Usuario" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+            </div>
+            <asp:Panel ID="pnlUser" runat="server" Style="display: none;">
+                <a class="dropdown-item" href="#">Cerrar Sesión</a>
+            </asp:Panel>
+
+        </div>--%>
+
+        <%--<div class="header">
+            <img src="/source/images/mantenimiento/Imagenes/ImagenLogo.png" alt="Logo" />
+            <div class="user-nav">
+                <asp:Label ID="lblUserMaster" runat="server" Text="Label"></asp:Label>
+                <img src="/source/images/mantenimiento/Imagenes/usuariooo.png" alt="Usuario" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+            </div>
+            <asp:Panel ID="pnlUser" runat="server" CssClass="pnlUser">
+                <a class="dropdown-item" href="#">Cerrar Sesión</a>
+            </asp:Panel>
+        </div>--%>
+
+
+
+        <div class="header">
+            <img src="/source/images/mantenimiento/Imagenes/ImagenLogo.png" alt="Logo" />
+
+
+            <div class="ms-auto">
+                <asp:Button ID="btnMantenimiento" class="btn btn-outline-success " Style="font-family: Calibri" data-bs-toggle="button" aria-expanded="true" runat="server" Text="Mantenimiento" CausesValidation="false" UseSubmitBehavior="false" OnClick="btnMantenimiento_Click" />
+                <span style="margin-left: 20px;"></span>
+
+
+                <asp:Button ID="btnReportes" class="btn btn-outline-success " Style="font-family: Calibri" data-bs-toggle="button" aria-expanded="true" runat="server" Text="Reportes" CausesValidation="false" UseSubmitBehavior="false" OnClick="btnReportes_Click" />
+                <span style="margin-left: 20px;"></span>
+
+                <div class="menu-container">
+
+                    <div class="menu-button">
+                        <asp:Label ID="lblUsuarioMaster" runat="server" Text="Usuario"></asp:Label>
+                        <img src="/source/images/mantenimiento/Imagenes/usuariooo.png" alt="Usuario" width="50" height="50" alt="Foto del Menú" class="menu-photo">
+                    </div>
+                    <div class="dropdown-menu">
+                        <center>
+                            <asp:Button ID="btnCierre" runat="server" class="btn btn-outline-success" Text="Cerrar Sesión" OnClick="btnCierre_Click" /></center>
+                    </div>
+                </div>
+                <span style="margin-left: 20px;"></span>
+            </div>
+        </div>
+
+
+
+
+        <asp:ContentPlaceHolder ID="Body" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <script src="/source/javascript/TextToSpeech.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/source/javascript/mantenimiento.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuButton = document.querySelector('.menu-button');
+            var dropdownMenu = document.querySelector('.dropdown-menu');
+
+            menuButton.addEventListener('click', function () {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Cierra el menú si se hace clic fuera de él
+            window.addEventListener('click', function (event) {
+                if (!menuButton.contains(event.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
